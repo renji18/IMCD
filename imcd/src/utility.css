@@ -25,4 +25,6 @@ body{
 
 .navbar_main{
   background: rgba(235, 77, 98, 0.913);
+  transition: width 200ms ease;
+  overflow: hidden;
 }

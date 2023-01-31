@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import Footer from '../components/Footer';
+import Btt from '../components/Btt';
 
 const TopRated = () => {
 
@@ -19,12 +20,13 @@ const TopRated = () => {
   return (
     <>
       <Header />
+      <Btt />
         <div
           className='sm:mx-24 text-4xl text-center text-stone-50 underline mt-20'>
           Top Rated
         </div>
         <div
-          className='flex flex-wrap justify-evenly sm:pl-24 w-[100%] overflow-x-clip'>
+          className='flex flex-wrap justify-evenly w-[100%] overflow-x-clip'>
 
           {
             data.map((item) => (

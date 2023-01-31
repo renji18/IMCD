@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
+import Btt from '../components/Btt';
 
 const SingleMovie = () => {
 
@@ -28,6 +29,7 @@ const SingleMovie = () => {
   return (
     <>
       <Header />
+      <Btt />
       {
         loading
           ?

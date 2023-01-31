@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import Btt from '../components/Btt';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import '../utility.css'
 import { Link } from 'react-router-dom';
@@ -42,6 +43,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      <Btt />
       <Carousel
         showThumbs={false}
         autoPlay={true}
@@ -87,7 +89,7 @@ const Home = () => {
         Now Playing
       </div>
       <div
-        className='flex flex-wrap justify-evenly sm:pl-24 w-[100%] overflow-x-clip'>
+        className='flex flex-wrap justify-evenly w-[100%] overflow-x-clip'>
         {
           data.map((item) => (
             <Card movieData={item} key={item.id} />
