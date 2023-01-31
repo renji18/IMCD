@@ -10,8 +10,6 @@ import Card from '../components/Card';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-
-//https://api.themoviedb.org/3/movie/upcoming?api_key=dee5beeb7c4ab8309d44634ae7e14f01
 const Home = () => {
 
   const [carouselData, setCarouselData] = useState([])
@@ -27,14 +25,14 @@ const Home = () => {
   }, [])
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=dee5beeb7c4ab8309d44634ae7e14f01')
+    fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}`)
       .then((data) => data.json())
       .then((data) => setCarouselData(data.results))
   }, [])
 
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/now_playing?api_key=dee5beeb7c4ab8309d44634ae7e14f01')
+    fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_API_KEY}`)
       .then((data) => data.json())
       .then((data) => setData(data.results))
   }, [])
@@ -45,11 +43,11 @@ const Home = () => {
       <Header />
       <Btt />
       <Carousel
-        showThumbs={false}
         autoPlay={true}
+        showThumbs={false}
         transitionTime={3}
         infiniteLoop={true}
-        showArrows={false}
+        // showArrows={false}
         showIndicators={false}
         showStatus={false}>
         {

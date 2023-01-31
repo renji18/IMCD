@@ -28,3 +28,27 @@ body{
   transition: width 200ms ease;
   overflow: hidden;
 }
+
+.show_navbar{
+  width: 5rem;
+}
+
+.hide_navbar{
+  width: 0;
+}
+
+@media (max-width: 640px) {
+  .show_navbar{
+    width: auto;
+  }
+  .hide_navbar{
+    width: auto;
+
+  }
+}
+
+.footer_main{
+  background: rgba(235, 77, 98, 0.913);
+  transition: width 200ms ease;
+  overflow: hidden;
+}

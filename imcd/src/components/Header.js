@@ -4,14 +4,10 @@ import '../utility.css'
 import logo from '../images/—Pngtree—vector material download_1419602.png'
 
 const Header = () => {
-  const [width, setWidth] = useState(20)
+  const [mousePos, setMousePos] = useState(0)
   useEffect(() => {
     const handleMouseMove = (e) => {
-      if (e.clientX < 101) {
-        setWidth(20)
-      } else if (e.clientX > 101) {
-        setWidth(0)
-      }
+      setMousePos(e.clientX)
     }
     setTimeout(() => {
       window.addEventListener('mousemove', handleMouseMove)
@@ -23,6 +19,19 @@ const Header = () => {
       )
     }
   }, [])
+
+  useEffect(()=>{
+    const element = document.getElementById('docker')
+    if(mousePos <= 101) {
+      element.classList.remove('hide_navbar')
+      element.classList.add('show_navbar')
+    } else if(mousePos > 101){
+      element.classList.remove('show_navbar')
+      element.classList.add('hide_navbar')
+
+    }
+  }, [mousePos])
+
   return (
     <Fragment>
       <Link to='/'>
@@ -33,7 +42,8 @@ const Header = () => {
         </div>
       </Link>
       <div
-        className={`navbar_main z-50 mx-2 text-black mt-3 rounded-xl text-center sm:pt-32 grid space-y-2 py-2 border-y-[1px] text-xl md:text-2xl sm:fixed sm:w-${width} sm:grid sm:left-0 sm:top-36 sm:bottom-32`}>
+        id='docker'
+        className='navbar_main z-50 mx-2 text-black mt-3 rounded-xl text-center sm:pt-32 grid space-y-2 py-2 border-y-[1px] text-xl md:text-2xl sm:fixed sm:grid sm:left-0 sm:top-36 sm:bottom-32'>
         <NavLink to='/'>Home</NavLink>
         <hr />
         <NavLink to='/movie/latest'>Latest</NavLink>

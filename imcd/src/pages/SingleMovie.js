@@ -21,7 +21,7 @@ const SingleMovie = () => {
   const [singleMovieData, setSingleMovieData] = useState([])
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=dee5beeb7c4ab8309d44634ae7e14f01`)
+    fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}`)
       .then((data) => data.json())
       .then((data) => setSingleMovieData(data))
   }, [id]);
@@ -69,7 +69,7 @@ const SingleMovie = () => {
           </div>
           :
           <div
-            className='sm:mx-24 h-[100vh] mx-5 lg:mx-[250px] mt-7 relative'>
+            className='sm:mx-24 mx-5 lg:mx-[250px] mt-7 relative'>
             <div>
               <img src={`https://image.tmdb.org/t/p/original/${singleMovieData && singleMovieData.backdrop_path}`} alt="" />
             </div>

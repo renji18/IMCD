@@ -10,7 +10,7 @@ const Latest = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/upcoming?api_key=dee5beeb7c4ab8309d44634ae7e14f01')
+    fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}`)
       .then((data) => data.json())
       .then((data) => setData(data.results))
       .catch((err) => console.log(err))

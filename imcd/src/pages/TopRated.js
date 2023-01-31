@@ -8,10 +8,8 @@ const TopRated = () => {
 
   const [data, setData] = useState([])
 
-  // https://image.tmdb.org/t/p/original/{{ imagePath }}
-
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=dee5beeb7c4ab8309d44634ae7e14f01')
+    fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_API_KEY}`)
       .then((data) => data.json())
       .then((data) => setData(data.results))
       .catch((err) => console.log(err))
