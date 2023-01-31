@@ -11,7 +11,7 @@ function App() {
     <div>
       <Router>
         <Routes>
-          <Route index element={<Home />}></Route>
+          <Route path='/' element={<Home />}></Route>
           <Route path='/movie/latest' element={<Latest />}></Route>
           <Route path='/movie/top_rated' element={<TopRated />}></Route>
           <Route path='/movie/:id' element={<SingleMovie />}></Route>
