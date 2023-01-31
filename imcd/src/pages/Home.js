@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import '../utility.css'
@@ -46,7 +47,8 @@ const Home = () => {
         autoPlay={true}
         transitionTime={3}
         infiniteLoop={true}
-        // showArrows={false}
+        showArrows={false}
+        showIndicators={false}
         showStatus={false}>
         {
           loading
@@ -69,7 +71,7 @@ const Home = () => {
             carouselData.map(movie => (
               <Link to={`/movie/${movie.id}`}>
                 <div
-                  className='sm:mx-24 mt-7 relative'>
+                  className='sm:mx-24 mx-3 mt-10 relative'>
                   <img className='lg:h-[700px] lg:max-w-[1200px]' src={`https://image.tmdb.org/t/p/original/${movie && movie.backdrop_path}`} alt="" />
                   <div
                     className=' text-4xl mt-4 mb-7 text-pink-500'>
@@ -85,13 +87,14 @@ const Home = () => {
         Now Playing
       </div>
       <div
-        className='flex flex-wrap justify-evenly pl-24 w-[100%] overflow-x-clip'>
+        className='flex flex-wrap justify-evenly sm:pl-24 w-[100%] overflow-x-clip'>
         {
           data.map((item) => (
             <Card movieData={item} key={item.id} />
           ))
         }
       </div>
+      <Footer />
     </>
   );
 }

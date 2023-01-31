@@ -7,12 +7,12 @@ const Header = () => {
   return (
     <Fragment>
       <div
-        className='title_bar'>
-        <img className='logo' src={logo} alt="" />
-        <span className='logo_text'>IMCD</span>
+        className='title_bar flex justify-center sticky top-0'>
+        <img className='sm:w-[100px] w-[80px]' src={logo} alt="" />
+        <span className='logo_text md:text-[40px] md:font-medium text-[34px] flex items-center'>IMCD</span>
       </div>
       <div
-        className='bg-emerald-700/30 z-50 text-white rounded-xl text-center sm:pt-32 grid space-y-3 py-3 border-y-[1px] text-xl md:text-2xl sm:fixed sm:w-20 sm:grid sm:left-0 sm:top-32 sm:bottom-32'>
+        className='navbar_main z-50 mx-3 text-black mt-3 rounded-xl text-center sm:pt-32 grid space-y-2 py-2 border-y-[1px] text-xl md:text-2xl sm:fixed sm:w-20 sm:grid sm:left-0 sm:top-32 sm:bottom-32'>
         <NavLink to='/'>Home</NavLink>
         <hr />
         <NavLink to='/movie/latest'>Latest</NavLink>

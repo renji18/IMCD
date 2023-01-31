@@ -35,8 +35,8 @@ const Card = ({ movieData }) => {
           <div className='mt-7 mx-10'>
             <img className='w-[140px] hover:w-[160px] hover:z-50' src={`https://image.tmdb.org/t/p/original/${movieData && movieData.poster_path}`} alt="" />
             <div
-              className='break-words text-center mt-1 mb-2 text-emerald-500 text-xl max-w-[140px]'>
-              movieData.original_title
+              className='break-words text-center mt-1 mb-5 text-zinc-50 text-xl max-w-[140px]'>
+              {movieData.original_title}
             </div>
           </div>
         </Link>
